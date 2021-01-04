@@ -1,0 +1,14 @@
+{
+	"archive_url": "archive/{/version}/{/plugin_name}",
+	"plugins": [
+		{
+			"Name": "test plugin.dll",
+			"Title": "test plugin",
+			"Overview": "wa sans",
+			"Publisher": "Soju06",
+			"Image_URL": "https://cdn.trinets.xyz/d/JiZnzdj~iN.png",
+			"Size": -1,
+			"Hash": ""
+		}
+	]
+}
