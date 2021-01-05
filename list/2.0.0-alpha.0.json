@@ -1,6 +1,6 @@
 {
-	"archive_url": "archive/{/version}/{/plugin_name}",
-	"plugins": [
+	"Archive_URL": "archive/{/version}/{/plugin_name}",
+	"Plugins": [
 		{
 			"Name": "test plugin.dll",
 			"Title": "test plugin",
