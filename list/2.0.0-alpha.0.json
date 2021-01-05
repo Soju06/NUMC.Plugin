@@ -1,14 +1,41 @@
 {
-	"archive_url": "archive/{/version}/{/plugin_name}",
-	"plugins": [
-		{
-			"Name": "test plugin.dll",
-			"Title": "test plugin",
-			"Overview": "wa sans",
-			"Publisher": "Soju06",
-			"Image_URL": "https://cdn.trinets.xyz/d/JiZnzdj~iN.png",
-			"Size": -1,
-			"Hash": ""
-		}
-	]
+  "Archive_URL": "archive/{/version}/{/plugin_name}",
+  "Plugins": [
+    {
+      "Name": "test plugin.dll",
+      "Title": "test plugin",
+      "Overview": "wa sans",
+      "Publisher": "Soju06",
+      "Image_URL": "https://cdn.trinets.xyz/d/JiZnzdj~iN.png",
+      "Size": -1,
+      "Hash": ""
+    },
+    {
+      "Name": "test plugin1.dll",
+      "Title": "test plugin1",
+      "Overview": "wa sans1",
+      "Publisher": "Soju07",
+      "Image_URL": "https://cdn.trinets.xyz/d/R5_UQSfGIL.png",
+      "Size": -1,
+      "Hash": ""
+    },
+    {
+      "Name": "test plugin2.dll",
+      "Title": "test plugin2",
+      "Overview": "wa sans2",
+      "Publisher": "Soju08",
+      "Image_URL": "https://cdn.trinets.xyz/d/0RcdOOipPS.png",
+      "Size": -1,
+      "Hash": ""
+    },
+    {
+      "Name": "test plugin3.dll",
+      "Title": "test plugin3",
+      "Overview": "wa sans3",
+      "Publisher": "Soju09",
+      "Image_URL": "https://cdn.trinets.xyz/d/vvTxNlT19B.png",
+      "Size": -1,
+      "Hash": ""
+    }
+  ]
 }
