@@ -1,41 +1,45 @@
 {
-  "Archive_URL": "archive/{/version}/{/plugin_name}",
-  "Plugins": [
+  "archive_url": "archive/{/version}/{/plugin_name}",
+  "plugins": [
     {
-      "Name": "test plugin.dll",
-      "Title": "test plugin",
-      "Overview": "wa sans",
-      "Publisher": "Soju06",
-      "Image_URL": "https://cdn.trinets.xyz/d/JiZnzdj~iN.png",
-      "Size": -1,
-      "Hash": ""
+      "name": "test plugin.dll",
+      "title": "test plugin",
+      "version": "1.0.0.0",
+      "overview": "wa sans",
+      "publisher": "Soju06",
+      "image_url": "https://cdn.trinets.xyz/d/JiZnzdj~iN.png",
+      "size": -1,
+      "hash": ""
     },
     {
-      "Name": "test plugin1.dll",
-      "Title": "test plugin1",
-      "Overview": "wa sans1",
-      "Publisher": "Soju07",
-      "Image_URL": "https://cdn.trinets.xyz/d/R5_UQSfGIL.png",
-      "Size": -1,
-      "Hash": ""
+      "name": "test plugin1.dll",
+      "title": "test plugin1",
+      "version": "1.0.0.0",
+      "overview": "wa sans1",
+      "publisher": "Soju07",
+      "image_url": "https://cdn.trinets.xyz/d/R5_UQSfGIL.png",
+      "size": -1,
+      "hash": ""
     },
     {
-      "Name": "test plugin2.dll",
-      "Title": "test plugin2",
-      "Overview": "wa sans2",
-      "Publisher": "Soju08",
-      "Image_URL": "https://cdn.trinets.xyz/d/0RcdOOipPS.png",
-      "Size": -1,
-      "Hash": ""
+      "name": "test plugin2.dll",
+      "title": "test plugin2",
+      "version": "1.0.0.0",
+      "overview": "wa sans2",
+      "publisher": "Soju08",
+      "image_url": "https://cdn.trinets.xyz/d/0RcdOOipPS.png",
+      "size": -1,
+      "hash": ""
     },
     {
-      "Name": "test plugin3.dll",
-      "Title": "test plugin3",
-      "Overview": "wa sans3",
-      "Publisher": "Soju09",
-      "Image_URL": "https://cdn.trinets.xyz/d/vvTxNlT19B.png",
-      "Size": -1,
-      "Hash": ""
+      "name": "test plugin3.dll",
+      "title": "test plugin3",
+      "version": "1.0.0.0",
+      "overview": "wa sans3",
+      "publisher": "Soju09",
+      "image_url": "https://cdn.trinets.xyz/d/vvTxNlT19B.png",
+      "size": -1,
+      "hash": ""
     }
   ]
 }
