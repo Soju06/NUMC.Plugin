@@ -117,33 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="APPCOMMAND_BROWSER_BACKWARD" xml:space="preserve">
-    <value>Browser Back</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_FAVORITES" xml:space="preserve">
-    <value>Browser Favorites</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_FORWARD" xml:space="preserve">
-    <value>Browser Forward</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_HOME" xml:space="preserve">
-    <value>Browser Home</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_REFRESH" xml:space="preserve">
-    <value>Browser Refresh</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_SEARCH" xml:space="preserve">
-    <value>Browser Search</value>
-  </data>
-  <data name="APPCOMMAND_CLOSE" xml:space="preserve">
-    <value>Close Window (not application)</value>
-  </data>
-  <data name="APPCOMMAND_COPY" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="APPCOMMAND_CUT" xml:space="preserve">
-    <value>Cut</value>
-  </data>
   <data name="APPCOMMAND_MEDIA_NEXTTRACK" xml:space="preserve">
     <value>Next Song</value>
   </data>
@@ -161,33 +134,6 @@
   </data>
   <data name="APPCOMMAND_MEDIA_STOP" xml:space="preserve">
     <value>Stop</value>
-  </data>
-  <data name="APPCOMMAND_MICROPHONE_VOLUME_DOWN" xml:space="preserve">
-    <value>Microphone Volume Down</value>
-  </data>
-  <data name="APPCOMMAND_MICROPHONE_VOLUME_MUTE" xml:space="preserve">
-    <value>Microphone Mute</value>
-  </data>
-  <data name="APPCOMMAND_MICROPHONE_VOLUME_UP" xml:space="preserve">
-    <value>Microphone Volume Up</value>
-  </data>
-  <data name="APPCOMMAND_MIC_ON_OFF_TOGGLE" xml:space="preserve">
-    <value>Microphone on / off</value>
-  </data>
-  <data name="APPCOMMAND_NEW" xml:space="preserve">
-    <value>New Window</value>
-  </data>
-  <data name="APPCOMMAND_OPEN" xml:space="preserve">
-    <value>Open Window</value>
-  </data>
-  <data name="APPCOMMAND_REDO" xml:space="preserve">
-    <value>Redo</value>
-  </data>
-  <data name="APPCOMMAND_SAVE" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="APPCOMMAND_UNDO" xml:space="preserve">
-    <value>Undo</value>
   </data>
   <data name="APPCOMMAND_VOLUME_DOWN" xml:space="preserve">
     <value>Volume Down</value>

@@ -5,11 +5,11 @@
       "name": "AppCommand.dll",
       "title": "Application Command",
       "version": "1.0.0.0",
-      "overview": "Application command runtime\nControl your music or your browser, you can control the microphone",
+      "overview": "Application command runtime\nControl your music",
       "publisher": "Soju06",
       "image_url": "https://cdn.trinets.xyz/d/maGoHRy4jP.png",
       "size": 20992,
-      "hash": "HAr8fqJUGrfVID2yIb9cqMvhDlE3xjC9kqHdSXzHkVw="
+      "hash": "BoaKLkewdcLQx5FZF2tX0Of5G432A0NQfxl+FD+Wk6w="
     }
   ]
 }

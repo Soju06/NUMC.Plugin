@@ -117,38 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="APPCOMMAND_BROWSER_BACKWARD" xml:space="preserve">
-    <value>브라우저 뒤로 이동</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_FAVORITES" xml:space="preserve">
-    <value>브라우저 즐겨찾기 열기</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_FORWARD" xml:space="preserve">
-    <value>브라우저 앞으로 이동</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_HOME" xml:space="preserve">
-    <value>브라우저 홈으로 이동</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_REFRESH" xml:space="preserve">
-    <value>브라우저 새로 고침</value>
-  </data>
-  <data name="APPCOMMAND_BROWSER_SEARCH" xml:space="preserve">
-    <value>브라우저 검색 열기</value>
-  </data>
-  <data name="APPCOMMAND_CLOSE" xml:space="preserve">
-    <value>창 닫기 (응용 프로그램 아님)</value>
-  </data>
-  <data name="APPCOMMAND_COPY" xml:space="preserve">
-    <value>선택 영역 복사</value>
-  </data>
-  <data name="APPCOMMAND_CUT" xml:space="preserve">
-    <value>선택 영역 잘라내기</value>
-  </data>
   <data name="APPCOMMAND_MEDIA_NEXTTRACK" xml:space="preserve">
     <value>다음 곡</value>
   </data>
   <data name="APPCOMMAND_MEDIA_PAUSE" xml:space="preserve">
-    <value>재생 일시 정지</value>
+    <value>일시 정지</value>
   </data>
   <data name="APPCOMMAND_MEDIA_PLAY" xml:space="preserve">
     <value>재생</value>
@@ -160,34 +133,7 @@
     <value>이전 곡</value>
   </data>
   <data name="APPCOMMAND_MEDIA_STOP" xml:space="preserve">
-    <value>재생 정지</value>
-  </data>
-  <data name="APPCOMMAND_MICROPHONE_VOLUME_DOWN" xml:space="preserve">
-    <value>마이크 볼륨 낮춤</value>
-  </data>
-  <data name="APPCOMMAND_MICROPHONE_VOLUME_MUTE" xml:space="preserve">
-    <value>마이크 음소거</value>
-  </data>
-  <data name="APPCOMMAND_MICROPHONE_VOLUME_UP" xml:space="preserve">
-    <value>마이크 볼륨 높임</value>
-  </data>
-  <data name="APPCOMMAND_MIC_ON_OFF_TOGGLE" xml:space="preserve">
-    <value>마이크 켜기 / 끄기</value>
-  </data>
-  <data name="APPCOMMAND_NEW" xml:space="preserve">
-    <value>새 창</value>
-  </data>
-  <data name="APPCOMMAND_OPEN" xml:space="preserve">
-    <value>창 열기</value>
-  </data>
-  <data name="APPCOMMAND_REDO" xml:space="preserve">
-    <value>다시 실행</value>
-  </data>
-  <data name="APPCOMMAND_SAVE" xml:space="preserve">
-    <value>저장</value>
-  </data>
-  <data name="APPCOMMAND_UNDO" xml:space="preserve">
-    <value>실행 취소</value>
+    <value>정지</value>
   </data>
   <data name="APPCOMMAND_VOLUME_DOWN" xml:space="preserve">
     <value>볼륨 낮춤</value>

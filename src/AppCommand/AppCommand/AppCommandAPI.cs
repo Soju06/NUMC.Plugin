@@ -150,7 +150,7 @@ namespace AppCommand
         /// <summary>
         /// Play or pause playback. If there are discrete 
         /// </summary>
-        APPCOMMAND_MEDIA_PLAY_PAUSE = 19,
+        APPCOMMAND_MEDIA_PLAY_PAUSE = 14,
         /// <summary>
         /// Go to previous track.
         /// </summary>

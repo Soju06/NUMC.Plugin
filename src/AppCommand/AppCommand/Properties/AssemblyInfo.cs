@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 제어됩니다. 어셈블리와 관련된 정보를 수정하려면
 // 이러한 특성 값을 변경하세요.
 [assembly: AssemblyTitle("Application Command")]
-[assembly: AssemblyDescription("Application command runtime\nControl your music or your browser, you can control the microphone")]
+[assembly: AssemblyDescription("Application command runtime\nControl your music")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Soju06")]
 [assembly: AssemblyProduct("AppCommand")]
