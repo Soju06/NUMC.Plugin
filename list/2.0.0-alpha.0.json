@@ -1,45 +1,15 @@
 {
-  "archive_url": "archive/{/version}/{/plugin_name}",
+  "archive_url": "{/loc}/archive/{/version}/{/plugin_name}",
   "plugins": [
     {
-      "name": "test plugin.dll",
-      "title": "test plugin",
+      "name": "AppCommand.dll",
+      "title": "Application Command",
       "version": "1.0.0.0",
-      "overview": "wa sans",
+      "overview": "Application command runtime\nControl your music or your browser, you can control the microphone",
       "publisher": "Soju06",
-      "image_url": "https://cdn.trinets.xyz/d/JiZnzdj~iN.png",
-      "size": -1,
-      "hash": ""
-    },
-    {
-      "name": "test plugin1.dll",
-      "title": "test plugin1",
-      "version": "1.0.0.0",
-      "overview": "wa sans1",
-      "publisher": "Soju07",
-      "image_url": "https://cdn.trinets.xyz/d/R5_UQSfGIL.png",
-      "size": -1,
-      "hash": ""
-    },
-    {
-      "name": "test plugin2.dll",
-      "title": "test plugin2",
-      "version": "1.0.0.0",
-      "overview": "wa sans2",
-      "publisher": "Soju08",
-      "image_url": "https://cdn.trinets.xyz/d/0RcdOOipPS.png",
-      "size": -1,
-      "hash": ""
-    },
-    {
-      "name": "test plugin3.dll",
-      "title": "test plugin3",
-      "version": "1.0.0.0",
-      "overview": "wa sans3",
-      "publisher": "Soju09",
-      "image_url": "https://cdn.trinets.xyz/d/vvTxNlT19B.png",
-      "size": -1,
-      "hash": ""
+      "image_url": "https://cdn.trinets.xyz/d/maGoHRy4jP.png",
+      "size": 20992,
+      "hash": "HAr8fqJUGrfVID2yIb9cqMvhDlE3xjC9kqHdSXzHkVw="
     }
   ]
 }
