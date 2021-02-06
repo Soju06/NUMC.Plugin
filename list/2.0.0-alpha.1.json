@@ -1,0 +1,15 @@
+{
+  "archive_url": "{/loc}/archive/2.0.0-alpha.0/{/plugin_name}",
+  "plugins": [
+    {
+      "name": "AppCommand.dll",
+      "title": "Application Command",
+      "version": "1.0.0.0",
+      "overview": "Application command runtime\nControl your music",
+      "publisher": "Soju06",
+      "image_url": "https://cdn.trinets.xyz/d/maGoHRy4jP.png",
+      "size": 20992,
+      "hash": "BoaKLkewdcLQx5FZF2tX0Of5G432A0NQfxl+FD+Wk6w="
+    }
+  ]
+}
