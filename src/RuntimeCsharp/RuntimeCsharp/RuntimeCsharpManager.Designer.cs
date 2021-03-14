@@ -29,32 +29,34 @@ namespace RuntimeCsharp
         /// </summary>
         private void InitializeComponent()
         {
-            this.treeView1 = new NUMC.Design.Controls.TreeView();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RuntimeCsharpManager));
+            this.scriptsView = new NUMC.Design.Controls.TreeView();
             this.label1 = new NUMC.Design.Controls.Label();
             this.button1 = new NUMC.Design.Controls.Button();
-            this.button2 = new NUMC.Design.Controls.Button();
-            this.button3 = new NUMC.Design.Controls.Button();
+            this.edit_Button = new NUMC.Design.Controls.Button();
             this.button4 = new NUMC.Design.Controls.Button();
-            this.button5 = new NUMC.Design.Controls.Button();
-            this.button6 = new NUMC.Design.Controls.Button();
-            this.label2 = new NUMC.Design.Controls.Label();
-            this.label3 = new NUMC.Design.Controls.Label();
+            this.remove_Button = new NUMC.Design.Controls.Button();
+            this.disEanable_Button = new NUMC.Design.Controls.Button();
+            this.fastColoredTextBox1 = new FastColoredTextBoxNS.FastColoredTextBox();
+            this.documentMap1 = new FastColoredTextBoxNS.DocumentMap();
+            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // treeView1
+            // scriptsView
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.scriptsView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.treeView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.treeView1.ItemHeight = 25;
-            this.treeView1.Location = new System.Drawing.Point(18, 75);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
-            this.treeView1.MaxDragChange = 25;
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(395, 587);
-            this.treeView1.TabIndex = 0;
-            this.treeView1.Text = "treeView1";
+            this.scriptsView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.scriptsView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.scriptsView.ItemHeight = 25;
+            this.scriptsView.Location = new System.Drawing.Point(18, 75);
+            this.scriptsView.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
+            this.scriptsView.MaxDragChange = 25;
+            this.scriptsView.Name = "scriptsView";
+            this.scriptsView.Size = new System.Drawing.Size(395, 752);
+            this.scriptsView.TabIndex = 0;
+            this.scriptsView.Text = "treeView1";
             // 
             // label1
             // 
@@ -73,7 +75,7 @@ namespace RuntimeCsharp
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.button1.FontSize = 10F;
-            this.button1.Location = new System.Drawing.Point(116, 669);
+            this.button1.Location = new System.Drawing.Point(147, 834);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(5);
@@ -81,128 +83,148 @@ namespace RuntimeCsharp
             this.button1.TabIndex = 2;
             this.button1.Text = "스크립트 추가";
             // 
-            // button2
+            // edit_Button
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button2.FontSize = 10F;
-            this.button2.Location = new System.Drawing.Point(265, 669);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(45, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "제거";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button3.FontSize = 10F;
-            this.button3.Location = new System.Drawing.Point(220, 669);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5);
-            this.button3.Size = new System.Drawing.Size(45, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "편집";
+            this.edit_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.edit_Button.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.edit_Button.FontSize = 10F;
+            this.edit_Button.Location = new System.Drawing.Point(251, 834);
+            this.edit_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.edit_Button.Name = "edit_Button";
+            this.edit_Button.Padding = new System.Windows.Forms.Padding(5);
+            this.edit_Button.Size = new System.Drawing.Size(45, 23);
+            this.edit_Button.TabIndex = 2;
+            this.edit_Button.Text = "편집";
             // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.button4.FontSize = 12F;
-            this.button4.Location = new System.Drawing.Point(1030, 658);
+            this.button4.Location = new System.Drawing.Point(1502, 41);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(5);
             this.button4.Size = new System.Drawing.Size(214, 31);
             this.button4.TabIndex = 3;
             this.button4.Text = "스크립트 컴파일 / 패치";
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
-            // button5
+            // remove_Button
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button5.FontSize = 10F;
-            this.button5.Location = new System.Drawing.Point(310, 669);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5);
-            this.button5.Size = new System.Drawing.Size(45, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "제거";
+            this.remove_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.remove_Button.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.remove_Button.FontSize = 10F;
+            this.remove_Button.Location = new System.Drawing.Point(296, 834);
+            this.remove_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.remove_Button.Name = "remove_Button";
+            this.remove_Button.Padding = new System.Windows.Forms.Padding(5);
+            this.remove_Button.Size = new System.Drawing.Size(45, 23);
+            this.remove_Button.TabIndex = 2;
+            this.remove_Button.Text = "제거";
             // 
-            // button6
+            // disEanable_Button
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button6.FontSize = 10F;
-            this.button6.Location = new System.Drawing.Point(355, 669);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(5);
-            this.button6.Size = new System.Drawing.Size(58, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "활성화";
+            this.disEanable_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.disEanable_Button.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.disEanable_Button.FontSize = 10F;
+            this.disEanable_Button.Location = new System.Drawing.Point(341, 834);
+            this.disEanable_Button.Margin = new System.Windows.Forms.Padding(0);
+            this.disEanable_Button.Name = "disEanable_Button";
+            this.disEanable_Button.Padding = new System.Windows.Forms.Padding(5);
+            this.disEanable_Button.Size = new System.Drawing.Size(72, 23);
+            this.disEanable_Button.TabIndex = 2;
+            this.disEanable_Button.Text = "비활성화";
             // 
-            // label2
+            // fastColoredTextBox1
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.FontSize = 10F;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.label2.Location = new System.Drawing.Point(438, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(395, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "스크립트 로그:";
+            this.fastColoredTextBox1.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.fastColoredTextBox1.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>[^;=]+);\r\n^\\s*(case|default)\\s*[^:" +
+    "]*(?<range>:)\\s*(?<range>[^;]+);\r\n";
+            this.fastColoredTextBox1.AutoScrollMinSize = new System.Drawing.Size(1271, 1872);
+            this.fastColoredTextBox1.BackBrush = null;
+            this.fastColoredTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fastColoredTextBox1.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.fastColoredTextBox1.CharHeight = 18;
+            this.fastColoredTextBox1.CharWidth = 9;
+            this.fastColoredTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fastColoredTextBox1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fastColoredTextBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.fastColoredTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.fastColoredTextBox1.Hotkeys = resources.GetString("fastColoredTextBox1.Hotkeys");
+            this.fastColoredTextBox1.IndentBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.fastColoredTextBox1.IsReplaceMode = false;
+            this.fastColoredTextBox1.Language = FastColoredTextBoxNS.Language.CSharp;
+            this.fastColoredTextBox1.LeftBracket = '(';
+            this.fastColoredTextBox1.LeftBracket2 = '{';
+            this.fastColoredTextBox1.Location = new System.Drawing.Point(419, 79);
+            this.fastColoredTextBox1.Name = "fastColoredTextBox1";
+            this.fastColoredTextBox1.PaddingBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fastColoredTextBox1.Paddings = new System.Windows.Forms.Padding(0);
+            this.fastColoredTextBox1.RightBracket = ')';
+            this.fastColoredTextBox1.RightBracket2 = '}';
+            this.fastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.fastColoredTextBox1.ServiceColors = new FastColoredTextBoxNS.ServiceColors();
+            this.fastColoredTextBox1.ServiceLinesColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.fastColoredTextBox1.Size = new System.Drawing.Size(1083, 748);
+            this.fastColoredTextBox1.TabIndex = 4;
+            this.fastColoredTextBox1.TabStop = false;
+            this.fastColoredTextBox1.Text = resources.GetString("fastColoredTextBox1.Text");
+            this.fastColoredTextBox1.Zoom = 100;
             // 
-            // label3
+            // documentMap1
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.label3.FontSize = 9F;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.label3.Location = new System.Drawing.Point(438, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(806, 580);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Log";
+            this.documentMap1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.documentMap1.Location = new System.Drawing.Point(1508, 75);
+            this.documentMap1.Name = "documentMap1";
+            this.documentMap1.ScrollbarVisible = false;
+            this.documentMap1.Size = new System.Drawing.Size(208, 752);
+            this.documentMap1.TabIndex = 5;
+            this.documentMap1.Target = this.fastColoredTextBox1;
+            this.documentMap1.Text = "documentMap1";
             // 
             // RuntimeCsharpManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 707);
+            this.ClientSize = new System.Drawing.Size(1734, 872);
+            this.Controls.Add(this.documentMap1);
+            this.Controls.Add(this.fastColoredTextBox1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.scriptsView);
+            this.Controls.Add(this.edit_Button);
+            this.Controls.Add(this.disEanable_Button);
+            this.Controls.Add(this.remove_Button);
             this.Controls.Add(this.label1);
             this.MinimizeBox = false;
             this.Name = "RuntimeCsharpManager";
             this.Padding = new System.Windows.Forms.Padding(15, 49, 15, 15);
             this.Text = "RuntimeCsharpManager";
+            ((System.ComponentModel.ISupportInitialize)(this.fastColoredTextBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private NUMC.Design.Controls.TreeView treeView1;
+        private NUMC.Design.Controls.TreeView scriptsView;
         private NUMC.Design.Controls.Label label1;
         private NUMC.Design.Controls.Button button1;
-        private NUMC.Design.Controls.Button button2;
-        private NUMC.Design.Controls.Button button3;
+        private NUMC.Design.Controls.Button edit_Button;
         private NUMC.Design.Controls.Button button4;
-        private NUMC.Design.Controls.Button button5;
-        private NUMC.Design.Controls.Button button6;
-        private NUMC.Design.Controls.Label label2;
-        private NUMC.Design.Controls.Label label3;
+        private NUMC.Design.Controls.Button remove_Button;
+        private NUMC.Design.Controls.Button disEanable_Button;
+        private FastColoredTextBoxNS.FastColoredTextBox fastColoredTextBox1;
+        private FastColoredTextBoxNS.DocumentMap documentMap1;
     }
 }

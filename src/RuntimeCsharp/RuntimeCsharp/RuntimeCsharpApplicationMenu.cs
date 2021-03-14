@@ -20,7 +20,8 @@ namespace RuntimeCsharp
 
         private void RuntimeCsharpApplicationMenu_Click(object sender, EventArgs e)
         {
-
+            using (var rcm = new RuntimeCsharpManager())
+                rcm.ShowDialog();
         }
 
         public int Index => -30;

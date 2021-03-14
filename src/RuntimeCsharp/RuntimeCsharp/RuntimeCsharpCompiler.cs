@@ -1,4 +1,4 @@
-﻿using Microsoft.CSharp;
+﻿using Microsoft.CodeDom.Providers.DotNetCompilerPlatform;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -11,17 +11,20 @@ using System.Collections.Specialized;
 
 namespace RuntimeCsharp
 {
-    public static class Compiler
+    public static class RuntimeCsharpCompiler
     {
-        public static CsharpCompilerResult Build(CsharpCompilerParameters parameters)
+        public static CsharpCompilerResult Compiler(CsharpCompilerParameters parameters)
         {
-            using (var provider = new CSharpCodeProvider()) {
+            var loc = typeof(RuntimeCsharpCompiler)?.Assembly?.Location;
+            using (var provider = new CSharpCodeProvider(new ProviderOptions() {
+                CompilerFullPath = Path.Combine(Path.GetDirectoryName(loc), "Compiler\\csc.exe"), CompilerVersion = "v4.7.2" 
+            })) {
                 var compilerParameters = new CompilerParameters();
-                compilerParameters.ReferencedAssemblies.Add(Path.GetFileName(NUMC.Service.GetService()
-                    ?.GetType().Assembly.Location ?? "NUMC.exe"));
+                compilerParameters.ReferencedAssemblies.Add(typeof(NUMC.Service)?.Assembly?.Location ?? "NUMC.exe");
+                compilerParameters.ReferencedAssemblies.Add(loc ?? "RuntimeCsharp.dll");
                 compilerParameters.ReferencedAssemblies.Add("System.dll");
                 compilerParameters.ReferencedAssemblies.Add("System.Data.dll");
-                compilerParameters.ReferencedAssemblies.Add("System.Data.Drawing.dll");
+                compilerParameters.ReferencedAssemblies.Add("System.Drawing.dll");
                 compilerParameters.ReferencedAssemblies.Add("System.IO.Compression.dll");
                 compilerParameters.ReferencedAssemblies.Add("System.IO.Compression.FileSystem.dll");
                 compilerParameters.ReferencedAssemblies.Add("System.Net.Http.dll");
@@ -29,12 +32,16 @@ namespace RuntimeCsharp
                 compilerParameters.ReferencedAssemblies.Add("System.Web.Extensions.dll");
                 compilerParameters.ReferencedAssemblies.Add("System.Windows.Forms.dll");
                 compilerParameters.ReferencedAssemblies.Add("System.Xml.dll");
+                compilerParameters.WarningLevel = 3;
+                compilerParameters.CompilerOptions = "/optimize";
+                //compilerParameters.OutputAssembly = Path.Combine(Path.GetDirectoryName(typeof(NUMC.Service)?.Assembly?.Location), "test1.dll");
                 for (int i = 0; i < parameters.ReferencedAssemblies.Count; i++) {
-                    if (!compilerParameters.ReferencedAssemblies.Contains(parameters.ReferencedAssemblies[i]))
+                    if (!string.IsNullOrWhiteSpace(parameters.ReferencedAssemblies[i]) &&
+                        !compilerParameters.ReferencedAssemblies.Contains(parameters.ReferencedAssemblies[i]))
                         compilerParameters.ReferencedAssemblies.Add(parameters.ReferencedAssemblies[i]);
                 }
                 compilerParameters.GenerateInMemory = true;
-                compilerParameters.GenerateExecutable = true;
+                compilerParameters.GenerateExecutable = false;
                 var codes = new string[parameters.Codes.Count];
                 parameters.Codes.CopyTo(codes, 0);
                 var compileResults = provider.CompileAssemblyFromSource(compilerParameters, codes);
@@ -42,7 +49,7 @@ namespace RuntimeCsharp
                     HasErrors = compileResults?.Errors?.HasErrors ?? false,
                     Outputs = new string[compileResults.Output.Count],
                     Errors = new CompilerError[compileResults.Errors.Count],
-                    CompiledAssembly = compileResults.CompiledAssembly
+                    CompiledAssembly = compileResults?.Errors?.HasErrors == false ? compileResults.CompiledAssembly : null
                 };
                 compileResults.Output.CopyTo(results.Outputs, 0);
                 compileResults.Errors.CopyTo(results.Errors, 0);

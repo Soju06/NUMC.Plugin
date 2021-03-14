@@ -31,7 +31,6 @@ namespace AppCommand
                 switch (script.RuntimeName) {
                     case "Plugin.AppCommand":
                         var command = AppCommands.ToAppCommnad(script.Data);
-                        Debug.WriteLine(command.HasValue);
                         if (command.HasValue)
                             AppCommandAPI.Send(command.Value);
                         break;

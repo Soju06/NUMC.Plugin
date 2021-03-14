@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,52 +12,36 @@ namespace RuntimeCsharp
 {
     public class RuntimeCsharpCore
     {
-        public RuntimeCsharpCore()
-        {
-            Logger = new RuntimeCsharpLogger();
-            Logger.CollectionChanged += Logger_CollectionChanged;
+        static RuntimeCsharpCore() {
+            CereateDirectory();
         }
 
-        private void Logger_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-
+        public static void CereateDirectory() {
+            if (!ScriptDirectory.Exists) ScriptDirectory.Create();
         }
 
-        public RuntimeCsharpLogger Logger { get; private set; }
+        public static readonly DirectoryInfo ScriptDirectory = new DirectoryInfo(
+            Path.Combine(Path.GetDirectoryName(typeof(RuntimeCsharpCore).Assembly.Location), "Scripts"));
+
+        public static FileInfo[] GetScriptFileInfos() { 
+            CereateDirectory(); return ScriptDirectory.GetFiles(); 
+        }
+
+        public static RuntimeCsharpCompiler.CsharpCompilerParameters GetScripts() => 
+            GetScripts(GetScriptFileInfos());
+
+        public static RuntimeCsharpCompiler.CsharpCompilerParameters GetScripts(FileInfo[] files)
+        {
+            var ps = new RuntimeCsharpCompiler.CsharpCompilerParameters();
+            for (int i = 0; i < files.Length; i++)
+                if (files[i].Exists) {
+                    if (files[i].Name == "refs.txt")
+                        ps.ReferencedAssemblies.AddRange(File.ReadAllLines(files[i].FullName));
+                    else if(files[i].Extension == ".cs")
+                        ps.Codes.Add(File.ReadAllText(files[i].FullName));
+                }
+            return ps;
+        }
     }
 
-    public class RuntimeCsharpLogger : ObservableCollection<StringCollection>
-    {
-        #region 
-
-        //public RuntimeCsharpLogger()
-        //{
-        //    BufferSize = ushort.MaxValue;
-        //}
-
-        //private uint _bufferSize;
-        //private string[] _buffer = new string[1];
-
-        //public string[] Buffer { get => _buffer; }
-        //public uint BufferSize { get => _bufferSize; set => BufferSizeChange(value); }
-
-        //private void BufferSizeChange(uint v)
-        //{
-        //    if (v < 1 || v == Buffer.Length) return;
-        //    var odbf = _buffer;
-        //    var nwbf = new string[v];
-        //    var mn = Math.Min(v, odbf.Length);
-        //    for (uint i = 0; i < mn; i++)
-        //        nwbf[i] = odbf[i];
-        //    _bufferSize = v;
-        //    _buffer = nwbf;
-        //}
-
-        //public void Write(string text)
-        //{
-
-        //}
-
-        #endregion
-    }
 }

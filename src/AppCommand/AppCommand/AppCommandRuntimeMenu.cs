@@ -2,11 +2,7 @@
 using NUMC.Plugins.ScriptEditor;
 using NUMC.Script;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AppCommand
@@ -20,8 +16,7 @@ namespace AppCommand
         private RuntimeScript _runtimeScript;
         private KeyObject _keyObject;
 
-        public AppCommandRuntimeMenu()
-        {
+        public AppCommandRuntimeMenu() {
             _menus = new [] { _addMenu = NUMC.Menu.MenuStripSupport.AddMenuItem(null, "ac add", "add"),
                 _editMenu = NUMC.Menu.MenuStripSupport.AddMenuItem(null, "ac edit", "edit")};
             _addMenu.Click += Menu_Click;
@@ -46,7 +41,7 @@ namespace AppCommand
                     if (_keyObject == null) break;
                     using (var acr = new AppCommandDialog())
                         if(acr.ShowDialog() == DialogResult.OK && acr.SelectedCommand != null) {
-                            _keyObject.Script.AddRuntimeScript(new RuntimeScript {
+                            _keyObject.Scripts.AddRuntimeScript(new RuntimeScript {
                                 RuntimeName = AppCommandRuntime.AppCommandRuntimeName,
                                 Data = acr.SelectedCommand.GetData()
                             });
@@ -58,8 +53,7 @@ namespace AppCommand
 
 
 
-        public ToolStripItem[] Menus
-        {
+        public ToolStripItem[] Menus {
             get {
                 var r = AppCommands.GetResource();
                 _addMenu.Text = AppCommands.AppCommandAddMenuTextLocalizing(r);
@@ -68,16 +62,20 @@ namespace AppCommand
             }
         }
 
-        public void MenuClicking(IScriptEditor scriptEditor, IListViewItem listViewItem, RuntimeScript runtimeScript, KeyObject obj)
-        {
+        public void Dispose() { NUMC.Menu.MenuStripSupport.DisposeItems(_menus); }
+
+        public void Initialize(IScriptEditor scriptEditor) {
+
+        }
+
+        public void MenuClicking(IScriptEditor scriptEditor, 
+            NUMC.Design.Controls.TreeNode node, RuntimeScript runtimeScript, KeyObject obj) {
             _scriptEditor = scriptEditor;
             _runtimeScript = runtimeScript;
             _keyObject = obj;
-            if (_addMenu != null && _editMenu != null)
-                _editMenu.Visible = runtimeScript != null &&
+            if (_editMenu != null)
+                _editMenu.Visible = _editMenu.Enabled = runtimeScript != null &&
                     AppCommandRuntime.AppCommandRuntimeName == runtimeScript.RuntimeName;
         }
-
-        public void Dispose() { NUMC.Menu.MenuStripSupport.DisposeItems(_menus); }
     }
 }
