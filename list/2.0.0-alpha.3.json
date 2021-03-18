@@ -1,0 +1,25 @@
+{
+  "archive_url": "{/loc}/archive/2.0.0-alpha.3/{/plugin_name}",
+  "plugins": [
+    {
+      "name": "AppCommand.dll",
+      "title": "Application Command",
+      "version": "1.0.0.1",
+      "overview": "Application command runtime\nControl your music",
+      "publisher": "Soju06",
+      "image_url": "https://cdn.trinets.xyz/d/maGoHRy4jP.png",
+      "size": 20992,
+      "hash": "71Ry7DVO6h3gJxzXbGyrZUWtxT6d5AMZb3fLa8YBz7I="
+    },
+    {
+      "name": "Switch.dll",
+      "title": "Switch",
+      "version": "1.0.1.0",
+      "overview": "Use the hotkey to enable or disable NUMC",
+      "publisher": "Soju06",
+      "image_url": "https://cdn.pmh.codes/d/qvbV9ZT5SA.png",
+      "size": 22016,
+      "hash": "wwK2GxR412i7oLD9DwbWpXUiOxGEmGSZFgeSCmnzqdY="
+    }
+  ]
+}

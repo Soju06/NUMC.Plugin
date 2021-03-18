@@ -1,4 +1,5 @@
 ﻿using NUMC;
+using NUMC.Config.Object;
 using NUMC.Plugin.Runtime;
 using NUMC.Script;
 using System;
@@ -23,7 +24,7 @@ namespace AppCommand
 
         public void Dispose() { }
 
-        public void Initialize(Script script) { }
+        public void Initialize(Service service) { }
 
         public void Run(ScriptInfo scriptInfo, RuntimeScript script, bool isDown)
         {

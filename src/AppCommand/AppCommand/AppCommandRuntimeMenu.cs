@@ -1,4 +1,5 @@
-﻿using NUMC.Design.Controls;
+﻿using NUMC.Config.Object;
+using NUMC.Design.Controls;
 using NUMC.Plugins.ScriptEditor;
 using NUMC.Script;
 using System;

@@ -1,4 +1,5 @@
-﻿using NUMC.Script;
+﻿using NUMC.Config.Object;
+using NUMC.Script;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -41,7 +41,7 @@ namespace AppCommand
         public static ResourceManager GetResource()
         {
             var lng = Service.GetService()?
-                .GetScript()?.GetObject()?.Language?.ToLower();
+                .GetConfig()?.Language?.ToLower();
             var l = lng != "ko-kr" ? "en-us" : lng;
             return new ResourceManager($"AppCommand.{l}_c", typeof(AppCommands).Assembly);
         }

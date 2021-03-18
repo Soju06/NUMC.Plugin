@@ -1,4 +1,5 @@
-﻿using NUMC.Plugin.Menu;
+﻿using NUMC;
+using NUMC.Plugin.Menu;
 using NUMC.Script;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace Switch
             Core?.Dispose();
         }
 
-        public void Initialize(Script script) {
+        public void Initialize(Service service) {
             if(Core == null)
                 Core = new SwitchCore();
         }
