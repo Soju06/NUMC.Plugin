@@ -57,16 +57,16 @@ namespace Switch {
         }
 
         public static void SaveOptions(string i, Keys[] keys) {
-            var script = NUMC.Service.GetService().GetScript();
-            var value = script.GetObject().Settings["+plugins"]["+switch"].Values[$"+{i}"];
+            var config = NUMC.Service.GetService().GetConfig();
+            var value = config.Configs["+plugins"]["+switch"].Values[$"+{i}"];
             value.SetString(string.Join(",", keys.Select(x => (int)x)));
-            script.Save(NUMC.Setting.Setting.KeySettingPath);
+            config.Save();
         }
 
         public static Dictionary<string, Keys[]> LoadOptions() {
             var options = new Dictionary<string, Keys[]>();
-            var script = NUMC.Service.GetService().GetScript();
-            foreach (var item in script.GetObject().Settings["+plugins"]["+switch"].Values)
+            var config = NUMC.Service.GetService().GetConfig();
+            foreach (var item in config.Configs["+plugins"]["+switch"].Values)
                 options.Add(item.Key, GetKeys(item.Value.GetString()));
             return options;
         }

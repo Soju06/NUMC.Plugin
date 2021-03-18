@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsInput;
 
 namespace Switch {
     public class SwitchCore : IDisposable {
@@ -14,12 +13,19 @@ namespace Switch {
 
         public SwitchCore() {
             foreach (var item in Enum.GetValues(typeof(Keys)))
-                if (!KeyInfos.ContainsKey((Keys)item))
+                if ((Keys)item != Keys.None && !KeyInfos.ContainsKey((Keys)item))
                     KeyInfos.Add((Keys)item, false);
             NUMC.Keyboard.KeyboardHook.NonStopKeyDown += KeyboardKeyDown;
             NUMC.Keyboard.KeyboardHook.NonStopKeyUp += KeyboardKeyUp;
             TokenSource = new CancellationTokenSource();
             Token = TokenSource.Token;
+            var service = NUMC.Service.GetService();
+            var state = LoadState();
+            if (state == NUMC.Service.StateCode.Paused)
+                service?.Pause();
+            else if (state == NUMC.Service.StateCode.Running 
+                && service.State == NUMC.Service.StateCode.Paused)
+                service?.Start();
             Task.Run(Loop, Token);
         }
 
@@ -43,6 +49,7 @@ namespace Switch {
                     Options.TryGetValue("2", out M3);
                 }
 
+                bool s = false;
                 if (IsKeysDown(M1)) {
                     NUMC.Service.GetService()?.Start();
                     await Task.Delay(100);
@@ -59,7 +66,10 @@ namespace Switch {
                     else if (state == NUMC.Service.StateCode.Running)
                         setvice?.Pause();
                     await Task.Delay(100);
-                }
+                } else s = true;
+
+                if (!s) SaveState(NUMC.Service.GetService()?.State 
+                    ?? NUMC.Service.StateCode.Running);
 
                 reload_count++;
                 await Task.Delay(20);
@@ -81,5 +91,11 @@ namespace Switch {
         public void Dispose() {
             TokenSource.Cancel();
         }
+
+        private static NUMC.Service.StateCode LoadState() => (NUMC.Service.StateCode)
+            (NUMC.Service.GetService()?.GetConfig()?.Configs?["+plugin"]?["+switch"]?
+            .Values?["+service_state"]?.GetInt() ?? (int)NUMC.Service.StateCode.Running);
+        private static void SaveState(NUMC.Service.StateCode state) =>
+            NUMC.Service.GetService()?.GetConfig()?.Configs?["+plugin"]?["+switch"]?.Values?["+service_state"]?.SetInt((int)state);
     }
 }
